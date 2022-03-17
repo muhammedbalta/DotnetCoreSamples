@@ -1,23 +1,21 @@
-﻿using ConfigureSample.Models;
+﻿using KestrelSample.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ConfigureSample.Controllers
+namespace KestrelSample.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly AppSettings _settings;
-        public HomeController(ILogger<HomeController> logger, IOptions<AppSettings> settings)
+
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _settings = settings.Value;
         }
 
         public IActionResult Index()
